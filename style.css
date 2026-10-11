@@ -1,0 +1,683 @@
+
+/* ========================================
+   CLUBE ASPEN — ESTILO PRINCIPAL
+   Cores: azul, dourado, branco e escuro
+======================================== */
+
+:root {
+    --azul: #123B60;
+    --dourado: #FFC247;
+    --branco: #FFFFFF;
+    --escuro: #202A33;
+
+    --azul-claro: #287CB5;
+    --fundo: #F2F6FA;
+    --cinza: #647484;
+    --borda: #D7E0E8;
+    --sucesso: #237747;
+    --erro: #B42318;
+
+    --sombra: 0 8px 24px rgba(18, 59, 96, 0.12);
+    --raio: 16px;
+}
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--escuro);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ========================================
+   CABEÇALHO DO CLUBE
+======================================== */
+
+.cabecalho {
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--escuro)
+    );
+
+    color: var(--branco);
+    padding: 22px 20px;
+    border-bottom: 5px solid var(--dourado);
+}
+
+.identidade-clube {
+    width: min(100%, 1000px);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.identidade-clube img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    background: var(--branco);
+    border: 3px solid var(--dourado);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.identidade-clube h1 {
+    margin: 0 0 5px;
+    color: var(--dourado);
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.2;
+}
+
+.identidade-clube p {
+    margin: 0;
+    color: var(--branco);
+    font-size: 15px;
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.container {
+    width: min(100% - 32px, 1000px);
+    margin: 32px auto;
+}
+
+h2,
+h3 {
+    color: var(--azul);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+p {
+    overflow-wrap: anywhere;
+}
+
+.texto-secundario {
+    color: var(--cinza);
+}
+
+/* ========================================
+   CARTÕES E SEÇÕES
+======================================== */
+
+.boas-vindas,
+#areaLogin,
+.cartao,
+.perfil-cartao,
+.secao-perfil {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 24px;
+    box-shadow: var(--sombra);
+}
+
+.boas-vindas {
+    border-top: 5px solid var(--dourado);
+}
+
+.boas-vindas h2 {
+    margin-top: 0;
+}
+
+.boas-vindas p {
+    color: var(--cinza);
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+button {
+    min-height: 48px;
+    padding: 12px 20px;
+
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    background: var(--azul);
+    color: var(--branco);
+
+    font-weight: bold;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+button:hover {
+    background: var(--azul-claro);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Botão de destaque */
+
+.botao-destaque {
+    background: var(--dourado);
+    color: var(--escuro);
+}
+
+.botao-destaque:hover {
+    background: #E8A92D;
+    color: var(--escuro);
+}
+
+/* Botão secundário */
+
+.botao-secundario {
+    background: var(--branco);
+    color: var(--azul);
+    border-color: var(--azul);
+}
+
+.botao-secundario:hover {
+    background: var(--azul);
+    color: var(--branco);
+}
+
+/* Botão de perigo */
+
+.botao-perigo {
+    background: var(--erro);
+    color: var(--branco);
+}
+
+/* Grupo de botões */
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.botoes button {
+    flex: 1;
+}
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+form {
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+
+    color: var(--azul);
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+
+    color: var(--escuro);
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--azul-claro);
+    outline: 2px solid rgba(40, 124, 181, 0.2);
+}
+
+form button {
+    width: 100%;
+    margin-top: 16px;
+}
+
+#mensagem {
+    overflow-wrap: anywhere;
+}
+
+.mensagem-sucesso {
+    color: var(--sucesso);
+}
+
+.mensagem-erro {
+    color: var(--erro);
+}
+
+/* ========================================
+   NAVEGAÇÃO DO PERFIL
+======================================== */
+
+.menu-perfil {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.botao-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 76px;
+    padding: 16px;
+
+    background: var(--branco);
+    color: var(--azul);
+    border: 2px solid var(--borda);
+    border-radius: 12px;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.botao-menu:hover {
+    background: var(--azul);
+    color: var(--branco);
+    border-color: var(--dourado);
+}
+
+.botao-menu.ativo {
+    background: var(--azul);
+    color: var(--branco);
+    border-color: var(--dourado);
+}
+
+/* ========================================
+   PERFIL DO DESBRAVADOR
+======================================== */
+
+.perfil-topo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 4px solid var(--dourado);
+    background: var(--fundo);
+}
+
+.nome-perfil {
+    margin: 0;
+    color: var(--azul);
+    font-size: 26px;
+}
+
+.info-perfil {
+    color: var(--cinza);
+    margin: 4px 0;
+}
+
+/* ========================================
+   ESPECIALIDADES
+======================================== */
+
+.lista-especialidades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.especialidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    overflow-wrap: anywhere;
+}
+
+.especialidade.feita {
+    border-left: 4px solid var(--sucesso);
+}
+
+.especialidade.pendente {
+    border-left: 4px solid var(--dourado);
+}
+
+/* ========================================
+   BARRA DE PROGRESSO
+======================================== */
+
+.progresso {
+    width: 100%;
+    height: 12px;
+
+    overflow: hidden;
+    background: #E1E7ED;
+    border-radius: 20px;
+}
+
+.progresso-barra {
+    width: 0;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul-claro),
+        var(--dourado)
+    );
+
+    border-radius: inherit;
+    transition: width 0.4s ease;
+}
+
+.progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   LISTA DE INTEGRANTES
+======================================== */
+
+.lista-integrantes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.integrante {
+    padding: 20px;
+    text-align: center;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.integrante img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+
+    border: 3px solid var(--dourado);
+    border-radius: 50%;
+}
+
+.integrante h3 {
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    margin-top: 48px;
+    padding: 24px 16px;
+
+    text-align: center;
+    background: var(--escuro);
+    color: var(--branco);
+
+    border-top: 4px solid var(--dourado);
+}
+
+.rodape p {
+    margin: 4px;
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 800px) {
+    .lista-integrantes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container {
+        width: min(100% - 28px, 650px);
+    }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 18px 14px;
+    }
+
+    .identidade-clube {
+        gap: 12px;
+    }
+
+    .identidade-clube img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .identidade-clube h1 {
+        font-size: 23px;
+    }
+
+    .identidade-clube p {
+        font-size: 12px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+    }
+
+    .boas-vindas,
+    #areaLogin,
+    .cartao,
+    .perfil-cartao,
+    .secao-perfil {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botoes button {
+        width: 100%;
+    }
+
+    .menu-perfil {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .lista-especialidades {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-integrantes {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-topo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 105px;
+        height: 105px;
+    }
+
+    .nome-perfil {
+        font-size: 23px;
+    }
+
+    .progresso-texto {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* ========================================
+   ÁREA DO LÍDER
+======================================== */
+
+#areaLider {
+    margin-top: 30px;
+}
+
+#listaPendentes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cartao-pendente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 18px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cartao-pendente p {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: #222222;
+}
+
+.cartao-pendente button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.cartao-pendente button:first-of-type {
+    background-color: #198754;
+    color: #ffffff;
+}
+
+.cartao-pendente button:last-of-type {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.cartao-pendente button:hover {
+    opacity: 0.85;
+}
+
+.cartao-pendente button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

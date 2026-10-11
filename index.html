@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clube de Desbravadores</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    
+<header class="cabecalho">
+    <div class="identidade-clube">
+        <img src="/imgs/Aspen.png" alt="Símbolo do Clube Aspen">
+
+        <div>
+            <h1>Clube Aspen</h1>
+            <p>Desbravadores • Aventura • Amizade</p>
+        </div>
+    </div>
+</header>
+
+    <main class="container">
+        <section class="boas-vindas">
+            <h2>Bem-vindo ao nosso clube!</h2>
+            <p>
+                Acesse sua conta para visualizar seu perfil,
+                suas especialidades e seu progresso.
+            </p>
+
+            <div class="botoes">
+                <button id="botaoEntrar">Entrar</button>
+                <button id="botaoCadastro">Criar conta</button>
+            </div>
+        </section>
+
+        <section id="areaLogin" hidden>
+            <h2 id="tituloFormulario">Entrar na conta</h2>
+
+            <form id="formularioAuth">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" id="botaoEnviar">
+                    Entrar
+                </button>
+
+                <button type="button" id="botaoRecuperar">
+                    Esqueci minha senha
+                </button>
+
+                <p id="mensagem" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+
+<section id="areaPerfil" hidden>
+    <h2>Meu perfil</h2>
+
+    <p id="boasVindasPerfil"></p>
+
+    <div class="perfil-cartao">
+        <img
+            id="fotoPerfil"
+            class="foto-perfil"
+            src="https://placehold.co/120x120?text=Perfil"
+            alt="Foto do integrante"
+        >
+
+        <h3 id="nomePerfil">Meu nome</h3>
+
+        <p id="sobrePerfil">
+            Conte um pouco sobre você!
+        </p>
+    </div>
+
+    <button type="button" id="botaoSair">
+        Sair da conta
+    </button>
+</section>
+
+
+<!-- Área exclusiva para o líder -->
+<section id="areaLider" hidden>
+    <h2>Gerenciar integrantes</h2>
+
+    <p>Confira os cadastros que aguardam aprovação.</p>
+
+    <div id="listaPendentes">
+        <p>Carregando cadastros pendentes...</p>
+    </div>
+</section>
+
+
+</body>
+</html>
